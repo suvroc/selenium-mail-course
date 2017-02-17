@@ -35,6 +35,8 @@ namespace EndToEndMailCourse._01
             var element = driver.FindElement(By.Name("elementWithName"));
             Assert.IsNotNull(element);
             Assert.AreEqual(element.GetAttribute("value"), "Name test data");
+
+            driver.Quit();
         }
     }
 }

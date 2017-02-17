@@ -19,6 +19,11 @@ namespace EndToEndMailCourse._01
 
             #region TEST CODE
 
+            //Finding element using it's name
+            element = driver.FindElement(By.Name("firstName"));
+            //Setting element attribute to a variable
+            value = element.GetAttribute("value");
+
             #endregion
 
             Assert.IsNotNull(element);
@@ -37,6 +42,11 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
+
+            //Finding element using it's name
+            element = driver.FindElement(By.Name("lastName"));
+            //Setting element attribute to a variable
+            value = element.GetAttribute("value");
 
             #endregion
 
@@ -57,6 +67,11 @@ namespace EndToEndMailCourse._01
 
             #region TEST CODE
 
+            //Finding element using it's name
+            element = driver.FindElement(By.Name("country"));
+            //Setting element attribute to a variable
+            value = element.GetAttribute("value");
+
             #endregion
 
             Assert.IsNotNull(element);
@@ -71,16 +86,23 @@ namespace EndToEndMailCourse._01
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
-            string value = "";
+            // Changed value type to boolean
+            bool value;
             IWebElement element = null;
 
             #region TEST CODE
+
+            //Finding element using it's Id
+            element = driver.FindElement(By.Id("isActive"));
+            //Setting element attribute to a variable
+            value = element.Enabled;
 
             #endregion
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
             Assert.AreEqual(element.Enabled, false);
+            // Can not compare string to bool, so i've changed value type to bool
             Assert.AreEqual(value, false);
 
             driver.Quit();
@@ -95,6 +117,11 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
+
+            //Finding element using it's Id
+            element = driver.FindElement(By.Id("commentInput"));
+            //Setting element attribute to a variable
+            value = element.GetAttribute("value");
 
             #endregion
 
@@ -114,6 +141,9 @@ namespace EndToEndMailCourse._01
 
             #region TEST CODE
 
+            //Finding element using it's link text
+            element = driver.FindElement(By.LinkText("Details"));
+            
             #endregion
 
             Assert.IsNotNull(element);
@@ -132,7 +162,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            //Finding element using it's partial link text
+            element = driver.FindElement(By.PartialLinkText("List of"));
             #endregion
 
             Assert.IsNotNull(element);
