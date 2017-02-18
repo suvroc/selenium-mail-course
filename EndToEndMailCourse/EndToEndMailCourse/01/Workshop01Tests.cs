@@ -23,7 +23,7 @@ namespace EndToEndMailCourse._01
             element = driver.FindElement(By.Name("firstName"));
             //Setting element attribute to a variable
             value = element.GetAttribute("value");
-
+           
             #endregion
 
             Assert.IsNotNull(element);
@@ -42,7 +42,7 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+           
             //Finding element using it's name
             element = driver.FindElement(By.Name("lastName"));
             //Setting element attribute to a variable
@@ -86,8 +86,7 @@ namespace EndToEndMailCourse._01
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
-            // Changed value type to boolean
-            bool value;
+            bool value = true;
             IWebElement element = null;
 
             #region TEST CODE
@@ -102,7 +101,6 @@ namespace EndToEndMailCourse._01
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
             Assert.AreEqual(element.Enabled, false);
-            // Can not compare string to bool, so i've changed value type to bool
             Assert.AreEqual(value, false);
 
             driver.Quit();
@@ -143,7 +141,7 @@ namespace EndToEndMailCourse._01
 
             //Finding element using it's link text
             element = driver.FindElement(By.LinkText("Details"));
-            
+
             #endregion
 
             Assert.IsNotNull(element);
@@ -162,8 +160,10 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
+
             //Finding element using it's partial link text
             element = driver.FindElement(By.PartialLinkText("List of"));
+
             #endregion
 
             Assert.IsNotNull(element);
