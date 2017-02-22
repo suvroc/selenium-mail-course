@@ -71,7 +71,7 @@ namespace EndToEndMailCourse._01
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
-            string value = "";
+            bool value = true;
             IWebElement element = null;
 
             #region TEST CODE
