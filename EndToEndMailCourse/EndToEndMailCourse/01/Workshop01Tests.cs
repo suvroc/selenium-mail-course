@@ -18,7 +18,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.Name("firstName"));
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -37,7 +38,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.Name("lastName"));
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -56,7 +58,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.Name("country"));
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -75,7 +78,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.Id("isActive"));
+            value = element.Selected;
             #endregion
 
             Assert.IsNotNull(element);
@@ -95,7 +99,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.Id("commentInput"));
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -113,7 +118,7 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.TagName("a"));
             #endregion
 
             Assert.IsNotNull(element);
@@ -132,7 +137,7 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElement(By.LinkText("List of books"));
             #endregion
 
             Assert.IsNotNull(element);
