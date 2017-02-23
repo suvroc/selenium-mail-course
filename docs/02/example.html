@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>End-to-end testing mail course - Lesson 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/normalize.css">
+    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <script src="../common/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>End-to-end testing mail course - Lesson 2</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <a href="embeddedPage.html" class="btn btn-default" id="naviagtionButton">
+                            Go to other page
+                        </a>
+                </div>
+                <iframe id="iframeElement" width="300" height="300" src="embeddedPage.html">
+                    </iframe>
+                <div class="form-group">
+                    <label>Dynamic buttons</label>
+                    <a onClick="showHiddenText()" class="btn btn-default" id="showText">Show text</a>
+                    <div id="hiddenText" style="display:none">Some hidden text</div>
+                </div>
+                <div class="form-group">
+                    <label for="syncInput">Sync texts</label>
+                    <input onkeydown="updateSyncText(event)" type="text" class="form-control" id="syncInput" placeholder="Write text here and press Enter">
+                    <div id="syncText"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../common/js/plugins.js"></script>
+    <script src="../common/js/main.js"></script>
+    <script type="text/javascript">
+        function showHiddenText() {
+            document.getElementById("hiddenText").style.display = "block";
+        }
+
+        function updateSyncText(e) {
+            if (e.keyCode == 13) {
+                document.getElementById("syncText").style.display = "block";
+                document.getElementById("syncText").innerHTML = document.getElementById("syncInput").value;
+            }
+        }
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78887973-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
