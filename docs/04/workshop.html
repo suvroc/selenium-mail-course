@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>End-to-end testing mail course - Lesson 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/normalize.css">
+    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <script src="../common/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        .selected {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>End-to-end testing mail course - Workshop 4</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Personal data:</h2>
+                <div class="form-group">
+                    <label for="firstNameInput">First name</label>
+                    <input type="text" class="form-control" id="firstNameInput" placeholder="First name" value="">
+                </div>
+                <div class="form-group">
+                    <label for="lastNameInput">Last name</label>
+                    <input type="text" class="form-control" id="lastNameInput" placeholder="Text" value="">
+                </div>
+                <button id="nextButton" class="btn btn-success" onclick="nextPage()">Next</button>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../common/js/plugins.js"></script>
+    <script src="../common/js/main.js"></script>
+    <script type="text/javascript">
+        function nextPage() {
+            var firstName = document.getElementById('firstNameInput').value;
+            var lastName = document.getElementById('lastNameInput').value;
+
+            location.href = 'workshop1.html?firstName=' + firstName +
+                '&lastName=' + lastName;
+        }
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78887973-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
