@@ -26,13 +26,13 @@ namespace EndToEndMailCourse._04
 
             firstPage.NextButton.Click();
 
-            Assert.AreEqual(driver.Url, "http://diwebsity.com/test/04/example1.html");
+            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-mail-course/04/example1.html");
 
             var secondPage = new ExamplePage2(driver);
 
             secondPage.BackButton.Click();
 
-            Assert.AreEqual(driver.Url, "http://diwebsity.com/test/04/example.html");
+            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-mail-course/04/example.html");
 
             driver.Quit();
         }
