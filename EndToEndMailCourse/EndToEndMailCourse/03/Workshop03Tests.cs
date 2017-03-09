@@ -20,7 +20,7 @@ namespace EndToEndMailCourse._03
             IWebElement book = null;
 
             #region TEST CODE
-
+            book = driver.FindElement(By.CssSelector(".books .list-group > .list-group-item.book.selected > h4"));
             #endregion
 
             Assert.NotNull(book);
@@ -39,7 +39,7 @@ namespace EndToEndMailCourse._03
             IReadOnlyCollection<IWebElement> books = null;
 
             #region TEST CODE
-
+            books = driver.FindElements(By.CssSelector(".books .list-group > .list-group-item.book"));
             #endregion
 
             Assert.NotNull(books);
@@ -57,7 +57,7 @@ namespace EndToEndMailCourse._03
             IReadOnlyCollection<IWebElement> links = null;
 
             #region TEST CODE
-
+            links = driver.FindElements(By.CssSelector(".books .list-group > .list-group-item.book > h4 > a"));
             #endregion
 
             Assert.NotNull(links);
