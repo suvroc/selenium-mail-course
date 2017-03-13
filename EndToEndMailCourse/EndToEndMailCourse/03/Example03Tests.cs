@@ -34,7 +34,6 @@ namespace EndToEndMailCourse._03
             var selectedByNested = poemElement.FindElement(By.CssSelector(".list-group > .list-group-item.selected"));
             Assert.AreEqual(selectedByNested.Text, "And there is another sunshine,");
 
-
             var allLines = poemElement.FindElements(By.ClassName("list-group-item"));
             Assert.AreEqual(allLines.Count, 14);
 
