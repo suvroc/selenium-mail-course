@@ -22,11 +22,13 @@ namespace EndToEndMailCourse._05
             var supportElement = driver.FindElement(By.Id("supportQualityElement"));
 
             #region TEST
-            //var qualitySelect = new SelectElement(qualityElement);
-            //qualitySelect.SelectByText("Good");
+            var qualitySelect = new SelectElement(qualityElement);
+            qualitySelect.SelectByText("Good");
 
-            //var supportSelect = new SelectElement(supportElement);
-            //supportSelect.SelectByText("Poor"); 
+            var supportSelect = new SelectElement(supportElement);
+            supportSelect.SelectByText("Poor"); 
+
+            // sry it was already solved when i merge from master only thing i made was removing comments. 
             #endregion
 
             Assert.AreEqual(qualityElement.GetAttribute("value"), "good");
