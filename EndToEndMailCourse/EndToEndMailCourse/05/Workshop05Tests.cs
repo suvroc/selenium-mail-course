@@ -10,7 +10,7 @@ namespace EndToEndMailCourse._05
     [TestFixture]
     public class Workshop05Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/05/example.html";
+        private string testUrl = "https://suvroc.github.io/selenium-mail-course/05/workshop.html";
 
         [Test]
         public void ShouldSelectAnswers()
