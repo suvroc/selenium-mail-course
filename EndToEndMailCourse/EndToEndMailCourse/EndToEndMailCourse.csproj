@@ -63,6 +63,8 @@
     <Compile Include="03\Workshop03Tests.cs" />
     <Compile Include="04\Example04Tests.cs" />
     <Compile Include="04\Workshop04Tests.cs" />
+    <Compile Include="05\Example05Tests.cs" />
+    <Compile Include="05\Workshop05Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

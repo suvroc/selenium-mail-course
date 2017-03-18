@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>End-to-end testing mail course - Lesson 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/normalize.css">
+    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <script src="../common/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style lang="css">
+        #container {
+            position: absolute;
+            background-color: blue;
+        }
+        
+        #elem {
+            position: absolute;
+            background-color: green;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>End-to-end testing mail course - Lesson 5</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="selectElement">Select element</label>
+                    <select id="selectElement" class="form-control">
+                        <option value="value1">Value1</option>
+                        <option value="value2">Value2</option>
+                        <option value="value3">Value3</option>
+                        <option value="value4" selected>Value4</option>
+                        <option value="value5">Value5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="checkboxElement" class="form-inline" /> Checkbox element
+                </div>
+                <div class="form-group">
+                    <label for="keyInput">Input with keys combination</label>
+                    <input type="text" class="form-control" id="keyInput" placeholder="Write text and press Ctrl + L" onkeydown="presskey(event)">
+                </div>
+                <div id="hiddenObj" style="display:none;">
+                    <h3 id="hiddenText">You found a secret</h3>
+
+                    <div id='container' style="width: 600px;height: 400px">
+                        <div id="elem" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");' style="width: 200px;height: 150px;">
+                            <div id="innerElement" style='width:100%;height:100%;padding:10px'>
+                                <select id=test>
+                            <option value=1>first
+                            <option value=2>second
+                        </select>
+                                <INPUT TYPE=text value="123">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../common/js/plugins.js"></script>
+    <script src="../common/js/main.js"></script>
+    <script type="text/javascript">
+        function presskey(event) {
+            var evtobj = window.event ? event : e
+            if ((evtobj.keyCode == 76 || evtobj.keyCode == 108) && evtobj.ctrlKey) {
+                var hiddenObj = document.getElementById('hiddenObj').style.display = "block";
+            }
+        }
+
+        var mydragg = function() {
+            return {
+                move: function(divid, xpos, ypos) {
+                    divid.style.left = xpos + 'px';
+                    divid.style.top = ypos + 'px';
+                },
+                startMoving: function(divid, container, evt) {
+                    evt = evt || window.event;
+                    var posX = evt.clientX,
+                        posY = evt.clientY,
+                        divTop = divid.style.top,
+                        divLeft = divid.style.left,
+                        eWi = parseInt(divid.style.width),
+                        eHe = parseInt(divid.style.height),
+                        cWi = parseInt(document.getElementById(container).style.width),
+                        cHe = parseInt(document.getElementById(container).style.height);
+                    document.getElementById(container).style.cursor = 'move';
+                    divTop = divTop.replace('px', '');
+                    divLeft = divLeft.replace('px', '');
+                    var diffX = posX - divLeft,
+                        diffY = posY - divTop;
+                    document.onmousemove = function(evt) {
+                        evt = evt || window.event;
+                        var posX = evt.clientX,
+                            posY = evt.clientY,
+                            aX = posX - diffX,
+                            aY = posY - diffY;
+                        if (aX < 0) aX = 0;
+                        if (aY < 0) aY = 0;
+                        if (aX + eWi > cWi) aX = cWi - eWi;
+                        if (aY + eHe > cHe) aY = cHe - eHe;
+                        mydragg.move(divid, aX, aY);
+                    }
+                },
+                stopMoving: function(container) {
+                    var a = document.createElement('script');
+                    document.getElementById(container).style.cursor = 'default';
+                    document.onmousemove = function() {}
+                },
+            }
+        }();
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78887973-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
