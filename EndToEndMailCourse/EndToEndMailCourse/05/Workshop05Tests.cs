@@ -10,7 +10,7 @@ namespace EndToEndMailCourse._05
     [TestFixture]
     public class Workshop05Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/05/example.html";
+        private string testUrl = "https://suvroc.github.io/selenium-mail-course/05/workshop.html";
 
         [Test]
         public void ShouldSelectAnswers()
@@ -22,11 +22,7 @@ namespace EndToEndMailCourse._05
             var supportElement = driver.FindElement(By.Id("supportQualityElement"));
 
             #region TEST
-            //var qualitySelect = new SelectElement(qualityElement);
-            //qualitySelect.SelectByText("Good");
 
-            //var supportSelect = new SelectElement(supportElement);
-            //supportSelect.SelectByText("Poor"); 
             #endregion
 
             Assert.AreEqual(qualityElement.GetAttribute("value"), "good");
