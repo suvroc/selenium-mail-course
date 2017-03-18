@@ -22,7 +22,11 @@ namespace EndToEndMailCourse._05
             var supportElement = driver.FindElement(By.Id("supportQualityElement"));
 
             #region TEST
+            var selectQuality = new SelectElement(qualityElement);
+            selectQuality.SelectByText("Good");
 
+            var selectSupport = new SelectElement(supportElement);
+            selectSupport.SelectByText("Poor");
             #endregion
 
             Assert.AreEqual(qualityElement.GetAttribute("value"), "good");
