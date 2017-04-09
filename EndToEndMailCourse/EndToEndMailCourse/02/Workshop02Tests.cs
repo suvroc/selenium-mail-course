@@ -20,7 +20,16 @@ namespace EndToEndMailCourse._02
                 commentResult = null;
 
             #region TEST CODE
+            var nameInput = driver.FindElement(By.Id("taskNameInput"));
+            nameInput.SendKeys(name);
+            nameInput.SendKeys(Keys.Enter);
 
+            var showDetailsButton = driver.FindElement(By.Id("showDetailsButton"));
+            showDetailsButton.Click();
+
+            var commentInput = driver.FindElement(By.Id("commentInput"));
+            commentInput.SendKeys(comment);
+            commentInput.SendKeys(Keys.Enter);
             #endregion
 
             nameResult = driver.FindElement(By.Id("savedTaskName"));

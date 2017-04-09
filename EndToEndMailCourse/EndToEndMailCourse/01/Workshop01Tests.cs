@@ -18,7 +18,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementByName("firstName");
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -37,7 +38,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementByName("lastName");
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -56,7 +58,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementByName("country");
+            value = element.GetAttribute("value");
             #endregion
 
             Assert.IsNotNull(element);
@@ -75,7 +78,8 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementById("isActive");
+            value = element.Selected;
             #endregion
 
             Assert.IsNotNull(element);
@@ -95,12 +99,13 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementById("commentInput");
+            value = element.GetAttribute("placeholder");
             #endregion
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
-            Assert.AreEqual(value, "");
+            Assert.AreEqual(value, "Enter your comment");
 
             driver.Quit();
         }
@@ -113,7 +118,7 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
-
+            element = driver.FindElementByPartialLinkText("Details");
             #endregion
 
             Assert.IsNotNull(element);
@@ -132,6 +137,7 @@ namespace EndToEndMailCourse._01
             IWebElement element = null;
 
             #region TEST CODE
+            element = driver.FindElementByPartialLinkText("List");
 
             #endregion
 
