@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>End-to-end testing mail course - Lesson 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/normalize.css">
+    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <script src="../common/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        .list-group-item:after {
+            font-family: 'Glyphicons Halflings';
+            content: "\e080";
+            float: right;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            /* Light grey */
+            border-top: 5px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            float: right;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>End-to-end testing mail course - Workshop 7</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="loader" class="loader" style="display: none;"></div>
+                <h2>Rent a car company</h2>
+
+                <div class="form-group">
+                    <label for="companySelect">Company</label>
+                    <select id="companySelect" class="form-control" onchange="enableButton('carSelect')">
+                        <option value="audi">Audi</option>
+                        <option value="bmw">BMW</option>
+                        <option value="ford">Ford</option>
+                        <option value="seat">Seat</option>
+                        <option value="mercedes">Mercedes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="carSelect">Model</label>
+
+                    <select id="carSelect" class="form-control" disabled="disabled" onchange="waitFillResults()">
+                        <option value="combi">Combi</option>
+                        <option value="cabrio">Cariolet</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="hatch">Hatch-back</option>
+                    </select>
+                </div>
+                <h3 onclick="fillResults()">Results </h3>
+                <div class="list-group" id="results">
+                    <a class="list-group-item" id="tridots">...</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../common/js/plugins.js"></script>
+    <script src="../common/js/main.js"></script>
+
+    <script type="text/javascript">
+        function enableButton(elementName) {
+            if (!elementName) return;
+            var nextElement = document.getElementById(elementName);
+            setLoader(true);
+            var timer = setTimeout(function() {
+                nextElement.disabled = false;
+                clearTimeout(timer);
+                setLoader(false);
+            }, 1500);
+
+        }
+
+        function setLoader(enabled) {
+            if (enabled) {
+                document.getElementById('loader').style.display = "block";
+            } else {
+                document.getElementById('loader').style.display = "none";
+            }
+        }
+
+        function addDays(date, days) {
+            var dat = new Date(date.valueOf());
+            dat.setDate(dat.getDate() + days);
+            return dat;
+        }
+
+        function waitFillResults() {
+            setLoader(true);
+            var timer = setTimeout(function() {
+                fillResults();
+                clearTimeout(timer);
+                setLoader(false);
+            }, 1200);
+        }
+
+        function fillResults() {
+
+            var list = document.getElementById('results');
+            list.removeChild(document.getElementById('tridots'));
+            var date = new Date();
+            for (var i = 0; i < 6; i++) {
+
+                var item = document.createElement('a');
+                item.classList.add("list-group-item");
+                item.appendChild(document.createTextNode(date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()));
+                list.appendChild(item);
+                date = addDays(date, 1);
+            }
+
+        }
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78887973-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
