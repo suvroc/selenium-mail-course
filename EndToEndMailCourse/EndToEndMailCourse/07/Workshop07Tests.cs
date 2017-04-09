@@ -23,7 +23,19 @@ namespace EndToEndMailCourse._07
             var carSelectElement = driver.FindElement(By.Id("carSelect"));
 
             #region TEST CODE
+            var waiter = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
+            var selectCompany = new SelectElement(companySelectElement);
+            selectCompany.SelectByValue("bmw");
+
+            var carSelectText = waiter
+                .Until(ExpectedConditions.ElementToBeClickable(carSelectElement));
+
+            var selectCar = new SelectElement(carSelectElement);
+            selectCar.SelectByValue("sedan");
+
+            var finalList = waiter
+                .Until(ExpectedConditions.InvisibilityOfElementLocated(By.Id("tridots")));
             #endregion
 
             Assert.AreEqual(driver.FindElements(By.ClassName("list-group-item")).Count(), 6);
