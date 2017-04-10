@@ -24,22 +24,19 @@ namespace EndToEndMailCourse._07
 
 
             #region TEST CODE
-            var companyElement = new SelectElement(driver.FindElement(By.Id("companySelect")));
+            var companyElement = new SelectElement(companySelectElement);
             companyElement.SelectByValue("bmw");
-          var waiter = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-         //   Assert.AreEqual(companySelectElement.Selected, true);
-            
+             var waiter = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            var carSelectWait = waiter.Until(ExpectedConditions.ElementToBeClickable(carSelectElement));
+            //   Assert.AreEqual(companySelectElement.Selected, true);
 
-            carSelectElement = waiter
-                .Until(ExpectedConditions.ElementToBeClickable(By.Id("carSelect")));
-            var carElement = new SelectElement(driver.FindElement(By.Id("carSelect")));
+            var carElement = new SelectElement(carSelectElement);
             carElement.SelectByValue("sedan");
 
-         //   Assert.AreEqual(carSelectElement.Selected, true);
+            //   Assert.AreEqual(carSelectElement.Selected, true);
 
-            var results = driver.FindElement(By.Id("results"));
-            results = waiter
-                            .Until(ExpectedConditions.ElementToBeClickable(By.ClassName("list-group")));
+            var waiterTwo = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            var listWait = waiterTwo.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("a.list-group-item:nth-child(6)")));
 
             #endregion
 
