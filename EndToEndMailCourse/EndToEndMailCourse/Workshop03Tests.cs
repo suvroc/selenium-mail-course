@@ -17,7 +17,7 @@ namespace EndToEndMailCourse._03
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
 
-            IWebElement book = book1.FindElement(By.CssSelector("body > div > div:nth-child(2) > div > div > ul > li.list-group-item.book.selected"));
+            IWebElement book = driver.FindElement(By.CssSelector(".selected > h4:nth-child(1)"));
             Assert.NotNull(book);
           Assert.AreEqual(book.TagName, "h4");
             Assert.AreEqual(book.Text, "MORT");
@@ -31,8 +31,7 @@ namespace EndToEndMailCourse._03
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
 
-            var ile1 = driver.FindElement(By.ClassName("books"));
-            var books = ile1.FindElements(By.ClassName("list-group-item book"));
+            var books = driver.FindElements(By.CssSelector("li.list-group-item.book"));
 
             Assert.NotNull(books);
             Assert.AreEqual(books.Count(), 6);
@@ -46,8 +45,7 @@ namespace EndToEndMailCourse._03
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl(testUrl);
 
-            var ile2 = driver.FindElement(By.ClassName("books"));
-            var links = ile2.FindElements(By.ClassName("btn.btn-default"));
+            var links = driver.FindElements(By.CssSelector("a.btn.btn-default"));
 
             Assert.NotNull(links);
             Assert.AreEqual(links.Count, 6);
