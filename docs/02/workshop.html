@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>End-to-end testing mail course - Lesson 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/normalize.css">
+    <link rel="stylesheet" href="../common/css/main.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <script src="../common/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>End-to-end testing mail course - Workshop 2</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <h3>Task (press Enter to save)</h3>
+                <div>
+                    <label>Task name</label>
+                    <input onkeydown="updateTaskData(event)" type="text" class="form-control" id="taskNameInput">
+                </div>
+                <button id="showDetailsButton" onclick="showComment()" class="btn btn-default">Show details</button>
+                <div id="commentForm" style="display:none;">
+                    <label>Comment</label>
+                    <input onkeydown="updateTaskData(event)" type="text" class="form-control" id="commentInput">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <h3>Saved data</h3>
+
+                <div>
+                    <label>Task name</label>
+                    <div id="savedTaskName"></div>
+                </div>
+                <div>
+                    <label>Comment</label>
+                    <div type="text" id="savedComment"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../common/js/plugins.js"></script>
+    <script src="../common/js/main.js"></script>
+    <script type="text/javascript">
+        function showComment() {
+            if (document.getElementById("commentForm").style.display == "none") {
+                document.getElementById("commentForm").style.display = "block";
+            } else {
+                document.getElementById("commentForm").style.display = "none";
+            }
+        }
+
+        function updateTaskData(e) {
+            if (e.keyCode == 13) {
+                document.getElementById("savedTaskName").innerHTML = document.getElementById("taskNameInput").value;
+                document.getElementById("savedComment").innerHTML = document.getElementById("commentInput").value;
+            }
+        }
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78887973-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
