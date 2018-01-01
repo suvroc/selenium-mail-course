@@ -5,12 +5,12 @@ using System.Linq;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-namespace EndToEndMailCourse._06
+namespace EndToEndCourse._06
 {
     [TestFixture]
     public class Workshop06Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/06/workshop.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/06/workshop.html";
 
         [Test]
         public void ShouldTestOnMobile()

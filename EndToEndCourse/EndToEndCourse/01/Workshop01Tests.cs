@@ -2,12 +2,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace EndToEndMailCourse._01
+namespace EndToEndCourse._01
 {
     [TestFixture]
     public class Workshop01Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/01/workshop.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/01/workshop.html";
 
         [Test]
         public void ShouldTestFirstName()

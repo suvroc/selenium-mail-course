@@ -5,12 +5,12 @@ using System.Linq;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-namespace EndToEndMailCourse._05
+namespace EndToEndCourse._05
 {
     [TestFixture]
     public class Workshop05Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/05/workshop.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/05/workshop.html";
 
         [Test]
         public void ShouldSelectAnswers()

@@ -6,12 +6,12 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using System;
 
-namespace EndToEndMailCourse._07
+namespace EndToEndCourse._07
 {
     [TestFixture]
     public class Workshop07Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/07/workshop.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/07/workshop.html";
 
         [Test]
         public void ShouldSelectAnswers()

@@ -2,12 +2,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace EndToEndMailCourse._04
+namespace EndToEndCourse._04
 {
     [TestFixture]
     public class Example04Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/04/example.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/04/example.html";
 
 
         [Test]
@@ -26,13 +26,13 @@ namespace EndToEndMailCourse._04
 
             firstPage.NextButton.Click();
 
-            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-mail-course/04/example1.html");
+            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-course/04/example1.html");
 
             var secondPage = new ExamplePage2(driver);
 
             secondPage.BackButton.Click();
 
-            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-mail-course/04/example.html");
+            Assert.AreEqual(driver.Url, "https://suvroc.github.io/selenium-course/04/example.html");
 
             driver.Quit();
         }

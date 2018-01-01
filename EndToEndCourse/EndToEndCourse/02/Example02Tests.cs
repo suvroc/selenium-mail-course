@@ -2,12 +2,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace EndToEndMailCourse._02
+namespace EndToEndCourse._02
 {
     [TestFixture]
     public class Example02Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/02/example.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/02/example.html";
 
 
         [Test]

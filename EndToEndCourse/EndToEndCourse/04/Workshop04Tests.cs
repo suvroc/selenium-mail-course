@@ -3,12 +3,12 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Linq;
 
-namespace EndToEndMailCourse._04
+namespace EndToEndCourse._04
 {
     [TestFixture]
     public class Workshop04Tests
     {
-        private string testUrl = "https://suvroc.github.io/selenium-mail-course/04/workshop.html";
+        private string testUrl = "https://suvroc.github.io/selenium-course/04/workshop.html";
 
         [Test]
         public void ShouldCheckSelectedBookName()
